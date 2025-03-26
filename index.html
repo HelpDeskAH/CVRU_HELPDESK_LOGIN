@@ -1,71 +1,71 @@
-<!DOCTYPE html> <!-- Declares the document as HTML5 -->
-<html lang="en"> <!-- Root element with English language -->
-<head> <!-- Metadata section -->
-    <meta charset="UTF-8"> <!-- UTF-8 character encoding -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
-    <title>Login/Signup Page</title> <!-- Page title -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body> <!-- Body content -->
-    <div class="container" role="main"> <!-- Main container with ARIA role -->
-        <div class="form-toggle" role="tablist"> <!-- Toggle buttons container with ARIA role -->
-            <button id="loginBtn" class="toggle-button active" role="tab" aria-selected="true" aria-controls="loginForm">Login</button> <!-- Login toggle -->
-            <button id="signupBtn" class="toggle-button" role="tab" aria-selected="false" aria-controls="signupForm">Signup</button> <!-- Signup toggle -->
+<body>
+    <div class="container" role="main">
+        <div class="form-toggle" role="tablist">
+            <button id="loginBtn" class="toggle-button active" role="tab" aria-selected="true" aria-controls="loginForm">Login</button>
+            <button id="signupBtn" class="toggle-button" role="tab" aria-selected="false" aria-controls="signupForm">Signup</button>
         </div>
-        <form id="loginForm" class="form active" action="/login" method="POST" role="form" aria-label="Login Form"> <!-- Login form with backend endpoint -->
-            <h2>Login</h2> <!-- Form heading -->
-            <input type="hidden" name="csrf_token" value="YOUR_CSRF_TOKEN"> <!-- CSRF token placeholder -->
-            <div class="input-group"> <!-- Email input group -->
-                <input type="email" id="username" name="email" placeholder=" " required aria-label="Email"> <!-- Email input with ID for snippet -->
-                <label for="username">Email</label> <!-- Email label -->Email label -->
+        <form id="loginForm" class="form active" action="/login" method="POST" role="form" aria-label="Login Form">
+            <h2>Login</h2>
+            <input type="hidden" name="csrf_token" value="YOUR_CSRF_TOKEN">
+            <div class="input-group">
+                <input type="email" id="username" name="email" placeholder=" " required aria-label="Email">
+                <label for="username">Email</label>
             </div>
-            <div class="input-group"> <!-- Password input group -->
-                <input type="password" id="password" name="password" placeholder=" " required aria-label="Password"> <!-- Password input with ID for snippet -->
-                <label for="password">Password</label> <!-- Password label -->sword label -->
-                <button type="button" class="password-toggle" onclick="togglePasswordVisibility(this)" aria-label="Toggle password visibility">👁️</button> <!-- Toggle icon -->-- Toggle icon -->
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder=" " required aria-label="Password">
+                <label for="password">Password</label>
+                <button type="button" class="password-toggle" onclick="togglePasswordVisibility(this)" aria-label="Toggle password visibility">👁️</button>
             </div>
-            <div class="input-group"> <!-- Remember me checkbox -->
-                <input type="checkbox" id="rememberMe" name="rememberMe" aria-label="Remember Me"> <!-- Checkbox -->
-                <label for="rememberMe">Remember Me</label> <!-- Checkbox label -->
+            <div class="input-group">
+                <input type="checkbox" id="rememberMe" name="rememberMe" aria-label="Remember Me">
+                <label for="rememberMe">Remember Me</label>
             </div>
-            <button type="submit" class="submit-button login">Login</button> <!-- Submit button with class for snippet -->
-            <div class="loading-spinner" id="loadingSpinner" aria-hidden="true">Loading...</div> <!-- Loading spinner -->Loading spinner -->
-            <div class="social-login"> <!-- Social login options -->
-                <button type="button" onclick="socialLogin('google')"><i class="fab fa-google"></i> Login with Google</button> <!-- Google button -->
-                <button type="button" onclick="socialLogin('facebook')"><i class="fab fa-facebook-f"></i> Login with Facebook</button> <!-- Facebook button -->
+            <button type="submit" class="submit-button login">Login</button>
+            <div class="loading-spinner" id="loadingSpinner" aria-hidden="true">Loading...</div>
+            <div class="social-login">
+                <button type="button" onclick="socialLogin('google')"><i class="fab fa-google"></i> Login with Google</button>
+                <button type="button" onclick="socialLogin('facebook')"><i class="fab fa-facebook-f"></i> Login with Facebook</button>
             </div>
-            <p><a href="#" id="forgotPassword" aria-label="Forgot Password">Forgot Password?</a></p> <!-- Forgot password link -->
+            <p><a href="#" id="forgotPassword" aria-label="Forgot Password">Forgot Password?</a></p>
         </form>
-        <form id="signupForm" class="form" action="/signup" method="POST" role="form" aria-label="Signup Form"> <!-- Signup form with backend endpoint -->
-            <h2>Signup</h2> <!-- Form heading -->
-            <input type="hidden" name="csrf_token" value="YOUR_CSRF_TOKEN"> <!-- CSRF token placeholder -->
-            <div class="input-group"> <!-- Username input group -->
-                <input type="text" id="signupUsername" name="username" placeholder=" " required aria-label="Username"> <!-- Username input -->- Username input -->
-                <label for="signupUsername">Username</label> <!-- Username label -->-- Username label -->
+        <form id="signupForm" class="form" action="/signup" method="POST" role="form" aria-label="Signup Form">
+            <h2>Signup</h2>
+            <input type="hidden" name="csrf_token" value="YOUR_CSRF_TOKEN">
+            <div class="input-group">
+                <input type="text" id="signupUsername" name="username" placeholder=" " required aria-label="Username">
+                <label for="signupUsername">Username</label>
             </div>
-            <div class="input-group"> <!-- Email input group -->
-                <input type="email" id="signupEmail" name="email" placeholder=" " required aria-label="Email"> <!-- Email input -->- Email input -->
-                <label for="signupEmail">Email</label> <!-- Email label -->-- Email label -->
+            <div class="input-group">
+                <input type="email" id="signupEmail" name="email" placeholder=" " required aria-label="Email">
+                <label for="signupEmail">Email</label>
             </div>
-            <div class="input-group"> <!-- Password input group -->
-                <input type="password" id="signupPassword" name="password" placeholder=" " required oninput="checkPasswordStrength(this)" aria-label="Password"> <!-- Password input -->- Password input -->
-                <label for="signupPassword">Password</label> <!-- Password label -->-- Password label -->
-                <button type="button" class="password-toggle" onclick="togglePasswordVisibility(this)" aria-label="Toggle password visibility">👁️</button> <!-- Toggle icon -->-- Toggle icon -->
-                <div class="password-strength" id="passwordStrength" aria-live="polite"></div> <!-- Strength indicator -->ength indicator -->
+            <div class="input-group">
+                <input type="password" id="signupPassword" name="password" placeholder=" " required oninput="checkPasswordStrength(this)" aria-label="Password">
+                <label for="signupPassword">Password</label>
+                <button type="button" class="password-toggle" onclick="togglePasswordVisibility(this)" aria-label="Toggle password visibility">👁️</button>
+                <div class="password-strength" id="passwordStrength" aria-live="polite"></div>
             </div>
-            <button type="submit" class="submit-button">Signup</button> <!-- Submit button -->
-            <div class="loading-spinner" id="loadingSpinnerSignup" aria-hidden="true">Loading...</div> <!-- Loading spinner -->Loading spinner -->
-            <div class="social-login"> <!-- Social signup options -->
-                <button type="button" onclick="socialLogin('google')"><i class="fab fa-google"></i> Signup with Google</button> <!-- Google button -->
-                <button type="button" onclick="socialLogin('facebook')"><i class="fab fa-facebook-f"></i> Signup with Facebook</button> <!-- Facebook button -->
+            <button type="submit" class="submit-button">Signup</button>
+            <div class="loading-spinner" id="loadingSpinnerSignup" aria-hidden="true">Loading...</div>
+            <div class="social-login">
+                <button type="button" onclick="socialLogin('google')"><i class="fab fa-google"></i> Signup with Google</button>
+                <button type="button" onclick="socialLogin('facebook')"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
             </div>
         </form>
-        <div class="footer"> <!-- Footer -->
-            <p>Already have an account? <a href="#" id="switchToLogin" aria-label="Switch to Login">Login here</a></p> <!-- Switch link -->
+        <div class="footer">
+            <p>Already have an account? <a href="#" id="switchToLogin" aria-label="Switch to Login">Login here</a></p>
         </div>
-        <div class="dark-mode-toggle" onclick="toggleDarkMode()" role="button" aria-label="Toggle Dark Mode">Toggle Dark Mode</div> <!-- Dark mode toggle -->
+        <div class="dark-mode-toggle" onclick="toggleDarkMode()" role="button" aria-label="Toggle Dark Mode">Toggle Dark Mode</div>
     </div>
     <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
