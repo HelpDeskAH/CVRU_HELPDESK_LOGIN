@@ -68,41 +68,43 @@ document.querySelector(".login").addEventListener('click', (e) => {
     e.preventDefault();
     const username = document.getElementById("username");
     const password = document.getElementById("password");
+    const errorMessage = document.getElementById("errorMessage");
 
     if (username.value === "cvruhelpdesk2025@gmail.com" && password.value === "admin1") {
         window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
-    }
-    else if (username.value === "amitsingharya12345@gmail.com" && password.value === "admin1") {
+    } else if (username.value === "amitsingharya12345@gmail.com" && password.value === "admin1") {
         window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
-    }
-    
-    else if (username.value === "rajharsh943140@gmail.com" && password.value === "admin1") {
+    } else if (username.value === "rajharsh943140@gmail.com" && password.value === "admin1") {
         window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
-    }
-
-     else {
+    } else {
         username.style.border = "2px solid red";
         password.style.border = "2px solid red";
+        errorMessage.textContent = "Invalid username or password. Please try again.";
+        errorMessage.style.display = "block";
     }
 });
 
 // Handle form submission with fetch API
 document.querySelectorAll('.form').forEach(form => {
     form.addEventListener('submit', async function (e) {
-        if (form.id === 'loginForm') return; // Skip login form submission
+        if (form.id === 'loginForm') return;
         e.preventDefault();
 
         const spinner = this.querySelector('.loading-spinner');
         spinner.style.display = 'block';
 
         const formData = new FormData(this);
+        const csrfToken = document.querySelector('input[name="csrf_token"]').value;
         const url = this.action;
 
         try {
             const response = await fetch(url, {
                 method: 'POST',
                 body: formData,
-                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-Token': csrfToken
+                }
             });
 
             const data = await response.json();
@@ -129,7 +131,7 @@ function socialLogin(provider) {
         const facebookAuthUrl = `https://www.facebook.com/v20.0/dialog/oauth?client_id=${appId}&redirect_uri=${redirectUri}&response_type=code&scope=email,public_profile`;
         window.location.href = facebookAuthUrl;
     } else if (provider === 'google') {
-        const googleAuthUrl = '/auth/google'; // Replace with your Google OAuth URL
+        const googleAuthUrl = '/auth/google';
         window.location.href = googleAuthUrl;
     }
 }
