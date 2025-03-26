@@ -69,9 +69,18 @@ document.querySelector(".login").addEventListener('click', (e) => {
     const username = document.getElementById("username");
     const password = document.getElementById("password");
 
-    if (username.value === "rajharsh943140@gmail.com" && password.value === "admin1") {
+    if (username.value === "cvruhelpdesk2025@gmail.com" && password.value === "admin1") {
         window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
-    } else {
+    }
+    else if (username.value === "amitsingharya12345@gmail.com" && password.value === "admin1") {
+        window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
+    }
+    
+    else if (username.value === "rajharsh943140@gmail.com" && password.value === "admin1") {
+        window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
+    }
+
+     else {
         username.style.border = "2px solid red";
         password.style.border = "2px solid red";
     }
