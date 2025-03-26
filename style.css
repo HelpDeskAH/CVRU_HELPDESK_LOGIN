@@ -1,273 +1,290 @@
-* { /* Universal selector */
-    margin: 0; /* Reset margins */
-    padding: 0; /* Reset padding */
-    box-sizing: border-box; /* Include padding/border in size */
+/* Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body { /* Body styling */
-    font-family: 'Arial', sans-serif; /* Font family */
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
-    display: flex; /* Flexbox layout */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Full viewport height */
-    color: #333; /* Default text color */
-    transition: background 0.5s ease; /* Smooth background transition */
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    transition: background 0.5s ease;
 }
 
-body.dark-mode { /* Dark mode body */
-    background: linear-gradient(135deg, #1e1e2f, #2c2c54); /* Dark gradient */
-    color: #fff; /* White text */
+/* Dark mode body */
+body.dark-mode {
+    background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+    color: #fff;
 }
 
-.container { /* Main container */
-    background: white; /* White background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow */
-    width: 90%; /* Responsive width */
-    max-width: 400px; /* Max width */
-    padding: 2rem; /* Padding */
-    text-align: center; /* Center text */
-    transition: all 0.5s ease; /* Smooth transitions */
-    animation: fadeIn 0.5s ease-in; /* Fade-in animation */
+/* Main container */
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.5s ease;
+    animation: fadeIn 0.5s ease-in;
 }
 
-@keyframes fadeIn { /* Fade-in animation keyframes */
-    from { opacity: 0; } /* Start transparent */
-    to { opacity: 1; } /* End fully opaque */
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-body.dark-mode .container { /* Dark mode container */
-    background: #2c2c54; /* Dark purple background */
-    color: #fff; /* White text */
+/* Dark mode container */
+body.dark-mode .container {
+    background: #2c2c54;
+    color: #fff;
 }
 
-.form-toggle { /* Toggle button container */
-    display: flex; /* Flexbox layout */
-    justify-content: space-between; /* Space buttons */
-    margin-bottom: 1.5rem; /* Bottom margin */
+/* Form toggle buttons */
+.form-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
 }
 
-.toggle-button { /* Toggle buttons */
-    background: none; /* No background */
-    border: none; /* No border */
-    font-size: 1.2rem; /* Font size */
-    color: #666; /* Gray text */
-    cursor: pointer; /* Pointer cursor */
-    padding: 0.5rem 1rem; /* Padding */
-    transition: all 0.3s ease; /* Smooth transition */
+.toggle-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
 }
 
-body.dark-mode .toggle-button { /* Dark mode toggle buttons */
-    color: #ccc; /* Light gray text */
+body.dark-mode .toggle-button {
+    color: #ccc;
 }
 
-.toggle-button.active { /* Active toggle button */
-    color: #2575fc; /* Blue text */
-    border-bottom: 2px solid #2575fc; /* Blue underline */
+.toggle-button.active {
+    color: #2575fc;
+    border-bottom: 2px solid #2575fc;
 }
 
-body.dark-mode .toggle-button.active { /* Dark mode active button */
-    color: #6a11cb; /* Purple text */
-    border-bottom: 2px solid #6a11cb; /* Purple underline */
+body.dark-mode .toggle-button.active {
+    color: #6a11cb;
+    border-bottom: 2px solid #6a11cb;
 }
 
-.form { /* Form styling */
-    display: none; /* Hidden by default */
+/* Form styling */
+.form {
+    display: none;
 }
 
-.form.active { /* Active form */
-    display: block; /* Visible */
+.form.active {
+    display: block;
 }
 
-.input-group { /* Input container */
-    position: relative; /* For absolute positioning */
-    margin-bottom: 1.5rem; /* Bottom margin */
+/* Input group styling */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
 }
 
-.input-group input { /* Input fields */
-    width: 100%; /* Full width */
-    padding: 10px 10px 10px 5px; /* Padding */
-    border: none; /* No border */
-    border-bottom: 2px solid #ccc; /* Gray underline */
-    font-size: 1rem; /* Font size */
-    outline: none; /* No outline */
-    background: transparent; /* Transparent background */
-    transition: border-color 0.3s ease; /* Smooth border transition */
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s ease;
 }
 
-body.dark-mode .input-group input { /* Dark mode inputs */
-    color: #fff; /* White text */
-    border-bottom-color: #666; /* Darker underline */
+body.dark-mode .input-group input {
+    color: #fff;
+    border-bottom-color: #666;
 }
 
-.input-group input:focus { /* Focused inputs */
-    border-bottom-color: #2575fc; /* Blue underline */
+.input-group input:focus {
+    border-bottom-color: #2575fc;
 }
 
-body.dark-mode .input-group input:focus { /* Dark mode focused inputs */
-    border-bottom-color: #6a11cb; /* Purple underline */
+body.dark-mode .input-group input:focus {
+    border-bottom-color: #6a11cb;
 }
 
-.input-group label { /* Input labels */
-    position: absolute; /* Absolute positioning */
-    top: 10px; /* Initial top position */
-    left: 5px; /* Left position */
-    color: #999; /* Gray text */
-    font-size: 1rem; /* Font size */
-    pointer-events: none; /* No click interference */
-    transition: all 0.3s ease; /* Smooth transition */
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    color: #999;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
-body.dark-mode .input-group label { /* Dark mode labels */
-    color: #ccc; /* Light gray text */
+body.dark-mode .input-group label {
+    color: #ccc;
 }
 
-.input-group input:focus ~ label, /* Label when input focused */
-.input-group input:not(:placeholder-shown) ~ label { /* Label when input filled */
-    top: -15px; /* Move up */
-    font-size: 0.8rem; /* Smaller font */
-    color: #2575fc; /* Blue text */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -15px;
+    font-size: 0.8rem;
+    color: #2575fc;
 }
 
-body.dark-mode .input-group input:focus ~ label, /* Dark mode focused label */
-body.dark-mode .input-group input:not(:placeholder-shown) ~ label { /* Dark mode filled label */
-    color: #6a11cb; /* Purple text */
+body.dark-mode .input-group input:focus ~ label,
+body.dark-mode .input-group input:not(:placeholder-shown) ~ label {
+    color: #6a11cb;
 }
 
-.password-toggle { /* Password visibility toggle */
-    position: absolute; /* Absolute positioning */
-    right: 5px; /* Right position */
-    top: 50%; /* Vertical center */
-    transform: translateY(-50%); /* Adjust centering */
-    cursor: pointer; /* Pointer cursor */
-    color: #999; /* Gray text */
+/* Password toggle */
+.password-toggle {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
 }
 
-body.dark-mode .password-toggle { /* Dark mode toggle */
-    color: #ccc; /* Light gray text */
+body.dark-mode .password-toggle {
+    color: #ccc;
 }
 
-.password-toggle:hover { /* Toggle on hover */
-    color: #2575fc; /* Blue text */
+.password-toggle:hover {
+    color: #2575fc;
 }
 
-.social-login { /* Social login section */
-    margin: 1.5rem 0; /* Vertical margin */
+/* Social login buttons */
+.social-login {
+    margin: 1.5rem 0;
 }
 
-.social-login button { /* Social login buttons */
-    width: 100%; /* Full width */
-    padding: 10px; /* Padding */
-    margin: 5px 0; /* Vertical margin */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem; /* Font size */
-    cursor: pointer; /* Pointer cursor */
-    display: flex; /* Flexbox layout */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    background: #f5f5f5; /* Light gray background */
-    color: #333; /* Dark gray text */
-    transition: background 0.3s ease; /* Smooth background transition */
+.social-login button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    color: #333;
+    transition: background 0.3s ease;
 }
 
-body.dark-mode .social-login button { /* Dark mode social buttons */
-    background: #444; /* Darker background */
-    color: #fff; /* White text */
+body.dark-mode .social-login button {
+    background: #444;
+    color: #fff;
 }
 
-.social-login button:hover { /* Social buttons on hover */
-    background: #e0e0e0; /* Lighter gray */
+.social-login button:hover {
+    background: #e0e0e0;
 }
 
-body.dark-mode .social-login button:hover { /* Dark mode hover */
-    background: #555; /* Slightly lighter dark gray */
+body.dark-mode .social-login button:hover {
+    background: #555;
 }
 
-.submit-button { /* Submit button */
-    width: 100%; /* Full width */
-    padding: 10px; /* Padding */
-    background: #2575fc; /* Blue background */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem; /* Font size */
-    cursor: pointer; /* Pointer cursor */
-    transition: background 0.3s ease; /* Smooth transition */
+/* Submit button */
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-body.dark-mode .submit-button { /* Dark mode submit button */
-    background: #6a11cb; /* Purple background */
+body.dark-mode .submit-button {
+    background: #6a11cb;
 }
 
-.submit-button:hover { /* Submit button hover */
-    background: #1a5bbf; /* Darker blue */
+.submit-button:hover {
+    background: #1a5bbf;
 }
 
-body.dark-mode .submit-button:hover { /* Dark mode hover */
-    background: #5a0e8c; /* Darker purple */
+body.dark-mode .submit-button:hover {
+    background: #5a0e8c;
 }
 
-.footer { /* Footer section */
-    margin-top: 1.5rem; /* Top margin */
-    font-size: 0.9rem; /* Font size */
-    color: #666; /* Gray text */
+/* Footer styling */
+.footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-body.dark-mode .footer { /* Dark mode footer */
-    color: #ccc; /* Light gray text */
+body.dark-mode .footer {
+    color: #ccc;
 }
 
-.footer a { /* Footer links */
-    color: #2575fc; /* Blue text */
-    text-decoration: none; /* No underline */
+.footer a {
+    color: #2575fc;
+    text-decoration: none;
 }
 
-body.dark-mode .footer a { /* Dark mode footer links */
-    color: #6a11cb; /* Purple text */
+body.dark-mode .footer a {
+    color: #6a11cb;
 }
 
-.footer a:hover { /* Footer links on hover */
-    text-decoration: underline; /* Underline on hover */
+.footer a:hover {
+    text-decoration: underline;
 }
 
-.password-strength { /* Password strength indicator */
-    margin-top: 5px; /* Top margin */
-    font-size: 0.9rem; /* Font size */
-    color: #ff0000; /* Red text */
+/* Password strength indicator */
+.password-strength {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #ff0000;
 }
 
-.loading-spinner { /* Loading spinner */
-    display: none; /* Hidden by default */
-    margin: 10px auto; /* Centered with margin */
-    font-size: 0.9rem; /* Font size */
-    color: #666; /* Gray text */
-    animation: spin 1s linear infinite; /* Spinning animation */
+/* Loading spinner */
+.loading-spinner {
+    display: none;
+    margin: 10px auto;
+    font-size: 0.9rem;
+    color: #666;
+    animation: spin 1s linear infinite;
 }
 
-@keyframes spin { /* Spinner animation keyframes */
-    0% { transform: rotate(0deg); } /* Start at 0 degrees */
-    100% { transform: rotate(360deg); } /* End at 360 degrees */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-.dark-mode-toggle { /* Dark mode toggle */
-    margin: 1rem 0; /* Vertical margin */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 1rem; /* Font size */
-    color: #666; /* Gray text */
+/* Dark mode toggle */
+.dark-mode-toggle {
+    margin: 1rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #666;
 }
 
-body.dark-mode .dark-mode-toggle { /* Dark mode toggle text */
-    color: #ccc; /* Light gray text */
+body.dark-mode .dark-mode-toggle {
+    color: #ccc;
 }
 
-@media (max-width: 500px) { /* Responsive design for smaller screens */
-    .container { /* Adjust container */
-        padding: 1.5rem; /* Reduce padding */
-        width: 95%; /* Increase width */
+/* Responsive design for smaller screens */
+@media (max-width: 500px) {
+    .container {
+        padding: 1.5rem;
+        width: 95%;
     }
-    .toggle-button { /* Adjust toggle buttons */
-        font-size: 1rem; /* Smaller font */
+    .toggle-button {
+        font-size: 1rem;
     }
 }

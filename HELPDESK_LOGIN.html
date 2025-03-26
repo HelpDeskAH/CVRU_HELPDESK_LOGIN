@@ -17,19 +17,19 @@
             <input type="hidden" name="csrf_token" value="YOUR_CSRF_TOKEN"> <!-- CSRF token placeholder -->
             <div class="input-group"> <!-- Email input group -->
                 <input type="email" id="username" name="email" placeholder=" " required aria-label="Email"> <!-- Email input with ID for snippet -->
-                <label>Email</label> <!-- Email label -->
+                <label for="username">Email</label> <!-- Email label -->Email label -->
             </div>
             <div class="input-group"> <!-- Password input group -->
                 <input type="password" id="password" name="password" placeholder=" " required aria-label="Password"> <!-- Password input with ID for snippet -->
-                <label>Password</label> <!-- Password label -->
-                <span class="password-toggle" onclick="togglePasswordVisibility(this)" aria-label="Toggle password visibility">👁️</span> <!-- Toggle icon -->
+                <label for="password">Password</label> <!-- Password label -->sword label -->
+                <button type="button" class="password-toggle" onclick="togglePasswordVisibility(this)" aria-label="Toggle password visibility">👁️</button> <!-- Toggle icon -->-- Toggle icon -->
             </div>
             <div class="input-group"> <!-- Remember me checkbox -->
                 <input type="checkbox" id="rememberMe" name="rememberMe" aria-label="Remember Me"> <!-- Checkbox -->
                 <label for="rememberMe">Remember Me</label> <!-- Checkbox label -->
             </div>
             <button type="submit" class="submit-button login">Login</button> <!-- Submit button with class for snippet -->
-            <div class="loading-spinner" id="loadingSpinner">Loading...</div> <!-- Loading spinner -->
+            <div class="loading-spinner" id="loadingSpinner" aria-hidden="true">Loading...</div> <!-- Loading spinner -->Loading spinner -->
             <div class="social-login"> <!-- Social login options -->
                 <button type="button" onclick="socialLogin('google')"><i class="fab fa-google"></i> Login with Google</button> <!-- Google button -->
                 <button type="button" onclick="socialLogin('facebook')"><i class="fab fa-facebook-f"></i> Login with Facebook</button> <!-- Facebook button -->
@@ -40,21 +40,21 @@
             <h2>Signup</h2> <!-- Form heading -->
             <input type="hidden" name="csrf_token" value="YOUR_CSRF_TOKEN"> <!-- CSRF token placeholder -->
             <div class="input-group"> <!-- Username input group -->
-                <input type="text" name="username" placeholder=" " required aria-label="Username"> <!-- Username input -->
-                <label>Username</label> <!-- Username label -->
+                <input type="text" id="signupUsername" name="username" placeholder=" " required aria-label="Username"> <!-- Username input -->- Username input -->
+                <label for="signupUsername">Username</label> <!-- Username label -->-- Username label -->
             </div>
             <div class="input-group"> <!-- Email input group -->
-                <input type="email" name="email" placeholder=" " required aria-label="Email"> <!-- Email input -->
-                <label>Email</label> <!-- Email label -->
+                <input type="email" id="signupEmail" name="email" placeholder=" " required aria-label="Email"> <!-- Email input -->- Email input -->
+                <label for="signupEmail">Email</label> <!-- Email label -->-- Email label -->
             </div>
             <div class="input-group"> <!-- Password input group -->
-                <input type="password" name="password" placeholder=" " required oninput="checkPasswordStrength(this)" aria-label="Password"> <!-- Password input -->
-                <label>Password</label> <!-- Password label -->
-                <span class="password-toggle" onclick="togglePasswordVisibility(this)" aria-label="Toggle password visibility">👁️</span> <!-- Toggle icon -->
-                <div class="password-strength" id="passwordStrength"></div> <!-- Strength indicator -->
+                <input type="password" id="signupPassword" name="password" placeholder=" " required oninput="checkPasswordStrength(this)" aria-label="Password"> <!-- Password input -->- Password input -->
+                <label for="signupPassword">Password</label> <!-- Password label -->-- Password label -->
+                <button type="button" class="password-toggle" onclick="togglePasswordVisibility(this)" aria-label="Toggle password visibility">👁️</button> <!-- Toggle icon -->-- Toggle icon -->
+                <div class="password-strength" id="passwordStrength" aria-live="polite"></div> <!-- Strength indicator -->ength indicator -->
             </div>
             <button type="submit" class="submit-button">Signup</button> <!-- Submit button -->
-            <div class="loading-spinner" id="loadingSpinnerSignup">Loading...</div> <!-- Loading spinner -->
+            <div class="loading-spinner" id="loadingSpinnerSignup" aria-hidden="true">Loading...</div> <!-- Loading spinner -->Loading spinner -->
             <div class="social-login"> <!-- Social signup options -->
                 <button type="button" onclick="socialLogin('google')"><i class="fab fa-google"></i> Signup with Google</button> <!-- Google button -->
                 <button type="button" onclick="socialLogin('facebook')"><i class="fab fa-facebook-f"></i> Signup with Facebook</button> <!-- Facebook button -->
