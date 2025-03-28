@@ -74,7 +74,9 @@ document.querySelector(".login").addEventListener('click', (e) => {
         window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
     } else if (username.value === "amitsingharya12345@gmail.com" && password.value === "admin1") {
         window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
-    } else if (username.value === "rajharsh943140@gmail.com" && password.value === "admin1") {
+    }
+   
+    else if (username.value === "rajharsh943140@gmail.com" && password.value === "admin1") {
         window.location.href = "https://helpdeskah.github.io/CVRU_HELPDESK/";
     } else {
         username.style.border = "2px solid red";
